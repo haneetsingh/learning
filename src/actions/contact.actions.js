@@ -12,8 +12,8 @@ function sendMessage(name, mail, subject, message) {
     dispatch({type: "CONTACT_REQUEST"});
     const url = base_url+'/contact_message?_format=json';
     const data = {
-      'contact_form':[{'target_id': 'feedback'}],
-      'uid':[{'target_id': 'feedback'}],
+      'contact_form':[{'target_id': 'connect'}],
+      'uid':[{'target_id': 'connect'}],
       'name':[{'value': name}],
       'mail':[{'value': mail}],
       'subject':[{'value': subject}],
@@ -62,16 +62,16 @@ function sendMessage(name, mail, subject, message) {
       })
       .catch(function(error) {
         dispatch({type: "CONTACT_REQUEST_FAILURE", payload: error.response.data.message});
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log('Error', error.message);
-        }
-        console.log(error.config);
+        // if (error.response) {
+        //   console.log(error.response.data);
+        //   console.log(error.response.status);
+        //   console.log(error.response.headers);
+        // } else if (error.request) {
+        //   console.log(error.request);
+        // } else {
+        //   console.log('Error', error.message);
+        // }
+        // console.log(error.config);
       });
   }
 }

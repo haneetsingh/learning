@@ -10,6 +10,7 @@ export const nodeAddActions = {
 function addNode(title, body, files, type, status) {
   return function(dispatch) {
     const encodedString = localStorage.getItem('auth_token');
+    // const csrf_token = localStorage.getItem('csrf_token');
     dispatch({type: "NODE_ADD"});
     const config = {
       'headers': {
@@ -76,7 +77,8 @@ function addNode(title, body, files, type, status) {
         const fileConfig = {
           'headers': {
             'Content-Type': 'application/json',
-            'Authorization': 'Basic '+encodedString
+            'Authorization': 'Basic '+encodedString,
+            'X-CSRF-Token': csrf_token
           }
         };
         const fileData = {
@@ -93,6 +95,16 @@ function addNode(title, body, files, type, status) {
           'filemime': [
             {
             'value': files.type
+            }
+          ],
+          'filesize': [
+            {
+              'value': files.size
+            }
+          ],
+          'type': [
+            {
+              'target_id': 'image'
             }
           ],
           'data': [

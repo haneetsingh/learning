@@ -34,7 +34,7 @@ export function contact(state = {
 
     case "CLEAR_FORM": {
       return {
-        ...state,
+        ...state
       };
     }
 
