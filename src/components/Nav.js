@@ -56,6 +56,9 @@ class Navigation extends Component {
                 <NavLink to="/" exact activeClassName="active" tag={RRNavLink}>Home</NavLink>
               </NavItem>
               <NavItem>
+                <NavLink to="/list/articles" exact activeClassName="active" tag={RRNavLink}>ArticleList</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink to="/articles" exact activeClassName="active" tag={RRNavLink}>Articles</NavLink>
               </NavItem>
               <NavItem>

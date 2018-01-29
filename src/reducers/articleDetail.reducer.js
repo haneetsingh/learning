@@ -1,6 +1,6 @@
 export function articleDetail(state = {
-  fetching: false,
-  fetched: false,
+  fetchingArticle: false,
+  fetchedArticle: false,
   fetchingAuthor: false,
   fetchedAuthor: false,
   article: [],
@@ -11,21 +11,21 @@ export function articleDetail(state = {
     case "FETCH_ARTICLE_DETAILS": {
       return {
         ...state,
-        fetching: true
+        fetchingArticle: true
       };
     }
     case "FETCH_ARTICLE_DETAILS_FAILURE": {
       return {
         ...state,
-        fetching: false,
+        fetchingArticle: false,
         error: action.payload
       };
     }
     case "FETCH_ARTICLE_DETAILS_SUCCESS": {
       return {
         ...state,
-        fetching: false,
-        fetched: true,
+        fetchingArticle: false,
+        fetchedArticle: true,
         article: action.payload
       };
     }

@@ -5,6 +5,7 @@ import {Navigation} from './Nav'
 import Home from './Home';
 import {About} from './About';
 import {Articles} from './Articles';
+import {ArticleList} from './ArticleList';
 import {ArticleDetail} from './ArticleDetail';
 import {UserLogin} from './UserLogin';
 import {UserRegister} from './UserRegister';
@@ -24,6 +25,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/articles" component={Articles}/>
+          <Route path="/list/articles" component={ArticleList}/>
           <Route path="/about" component={About}/>
           <Route path="/article/:name" component={ArticleDetail}/>
           <Route path="/user/login" component={UserLogin}/>
